@@ -26,7 +26,9 @@ def vectorize_text(query, expected_dim=768):
     query_vector = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
 
     if query_vector.shape[0] != expected_dim:
-        raise ValueError(f"Vector dimension mismatch: expected {expected_dim}, got {query_vector.shape[0]}")
+        raise ValueError(
+            f"Vector dimension mismatch: expected {expected_dim}, got {query_vector.shape[0]}"
+        )
 
     return query_vector
 
@@ -51,7 +53,7 @@ def search(query_vector, top_k=100):
         "query_vec",
         query_vector,
         "DIALECT",
-        "2"
+        "2",
     )
 
     # print("Search results:", results)
@@ -95,7 +97,6 @@ if __name__ == "__main__":
         if isinstance(res, list):
             embedding_score = f"embedding_score - {res[1]}"
             print(info_place_and_id, embedding_score)
-
 
     document_data = get_document(results[1])
     print(document_data["text"])
