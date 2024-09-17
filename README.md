@@ -1,7 +1,7 @@
 # test_wiki_vectorization
 Goal is to take a set of text, vectorize it and make it searchable by indexing it in a vector DB
 
-## How to run
+## How to up redis
 1. `docker-compose build` - build container
 2. `docker-compose up -d` - run  container with Redis and Redis Insight
 

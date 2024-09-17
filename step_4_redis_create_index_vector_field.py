@@ -19,7 +19,7 @@ def create_index():
         "TYPE",
         "FLOAT32",
         "DIM",
-        "768",
+        768,
         "DISTANCE_METRIC",
         "COSINE",
     )
